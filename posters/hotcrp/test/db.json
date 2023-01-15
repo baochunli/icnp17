@@ -1,0 +1,390 @@
+{
+"contacts": [
+    {"name": "Christian Huitema", "email": "huitema@bellcore.com", "affiliation": "Bellcore", "roles": ["pc", "chair"]},
+    {"name": "Christophe Diot", "email": "christophe.diot@sophia.inria.fr", "affiliation": "INRIA", "roles": ["pc"], "tags": "red"},
+    {"name": "Deborah Estrin", "email": "estrin@usc.edu", "affiliation": "University of Southern California", "roles": ["pc"], "tags": "red"},
+    {"name": "Eddie Kohler", "email": "kohler@seas.harvard.edu", "affiliation": "Harvard"},
+    {"name": "George Varghese", "email": "varghese@ccrc.wustl.edu", "affiliation": "Washington University of St. Louis", "roles": ["pc"], "tags": "red"},
+    {"name": "J. J. Garcia-Luna-Aceves", "email": "jj@cse.ucsc.edu", "affiliation": "University of California, Santa Cruz", "roles": ["pc"], "tags": "red"},
+    {"name": "Jon Crowcroft", "email": "jon@cs.ucl.ac.uk", "affiliation": "University College London", "roles": ["pc"], "tags": "red"},
+    {"name": "Lixia Zhang", "email": "lixia@cs.ucla.edu", "affiliation": "UCLA", "roles": ["pc"]},
+    {"name": "Marina Tsvetaeva", "email": "marina@poema.ru", "roles": ["pc"]},
+    {"name": "Mark Handley", "email": "mjh@isi.edu", "affiliation": "Information Sciences Institute", "roles": ["pc"]},
+    {"name": "Mary Baker", "email": "mgbaker@cs.stanford.edu", "affiliation": "Stanford University", "roles": ["pc"]},
+    {"name": "Paul Francis", "email": "pfrancis@ntt.jp", "affiliation": "NTT", "roles": ["pc"]},
+    {"name": "Peter Danzig", "email": "peter.danzig@usc.edu", "affiliation": "University of Southern California", "roles": ["pc"]},
+    {"name": "Peter Druschel", "email": "pdruschel@cs.rice.edu", "affiliation": "Rice", "roles": ["pc"]},
+    {"name": "Roch Guerin", "email": "rguerin@ibm.com", "affiliation": "IBM", "roles": ["pc"]},
+    {"name": "Sally Floyd", "email": "floyd@ee.lbl.gov", "affiliation": "Lawrence Berkeley National Laboratory", "roles": ["pc"]},
+    {"name": "Scott Shenker", "email": "shenker@parc.xerox.com", "affiliation": "Xerox PARC", "roles": ["pc", "chair"]},
+    {"name": "Van Jacobson", "email": "van@ee.lbl.gov", "affiliation": "Lawrence Berkeley National Laboratory"},
+    {"name": "Wilma Ojuelegba", "email": "ojuelegba@gmail.com", "affiliation": "Stanford", "roles": ["pc"]}
+],
+"papers": [{
+    "_id_": 1,
+    "title": "Scalable Timers for Soft State Protocols",
+    "abstract": "Soft state protocols use periodic refresh messages to keep network state alive while adapting to changing network conditions; this has raised concerns regarding the scalability of protocols that use the soft-state approach. In existing soft state protocols, the values of the timers that control the sending of these messages, and the timers for aging out state, are chosen by matching empirical observations with desired recovery and response times. These fixed timer-values fail because they use time as a metric for bandwidth; they adapt neither to (1) the wide range of link speeds that exist in most wide-area internets, nor to (2) fluctuations in the amount of network state over time.\n\nWe propose and evaluate a new approach in which timer-values adapt dynamically to the volume of control traffic and available bandwidth on the link. The essential mechanisms required to realize this scalable timers approach are: (1) dynamic adjustment of the senders’ refresh rate so that the bandwidth allocated for control traffic is not exceeded, and (2) estimation of the senders’ refresh rate at the receiver in order to determine when the state can be timed-out and deleted. The refresh messages are sent in a round robin manner not exceeding the bandwidth allocated to control traffic, and taking into account message priorities. We evaluate two receiver estimation methods for dynamically adjusting network state timeout values: (1) counting of the rounds and (2) exponential weighted moving average.",
+    "authors": [
+        {"name": "Puneet Sharma", "email": "puneet@catarina.usc.edu", "affiliation": "Information Sciences Institute, University of Southern California"},
+        {"name": "Deborah Estrin", "email": "estrin@USC.edu", "affiliation": "Information Sciences Institute, University of Southern California"},
+        {"name": "Sally Floyd", "email": "floyd@ee.lbl.gov", "affiliation": "Lawrence Berkeley National Laboratory"},
+        {"name": "Van Jacobson", "email": "van@ee.lbl.gov", "affiliation": "Lawrence Berkeley National Laboratory"}
+    ],
+    "submission": {"content": "%PDF-whatever"},
+    "submitted": true,
+    "options": {"calories": 1020}
+},
+{
+    "_id_": 2,
+    "title": "Small Forwarding Tables for Fast Routing Lookups",
+    "abstract": "For some time, the networking community has assumed that it is impossible to do IP routing lookups in software fast enough to support gigabit speeds. IP routing lookups must find the routing entry with the longest matching prefix, a task that has been thought to require hardware support at lookup frequencies of millions per second.We present a forwarding table data structure designed for quick routing lookups. Forwarding tables are small enough to fit in the cache of a conventional general purpose processor. With the table in cache, a 200 MHz Pentium Pro or a 333 MHz Alpha 21164 can perform a few million lookups per second. This means that it is feasible to do a full routing lookup for each IP packet at gigabit speeds without special hardware. The forwarding tables are very small, a large routing table with 40,000 routing entries can be compacted to a forwarding table of 150-160 Kbytes. A lookup typically requires less than 100 instructions on an Alpha, using eight memory references accessing a total of 14 bytes.",
+    "authors": [
+        {"name": "Mikael Degermark", "email": "micke@cdt.luth.se", "affiliation": "Luleå University of Technology", "contact": true},
+        {"name": "Andrej Brodnik", "email": "Andrej.Brodnik@IMFM.Uni-Lj.SI", "affiliation": "Luleå University of Technology"},
+        {"name": "Svante Carlsson", "email": "svante@sm.luth.se", "affiliation": "Luleå University of Technology"},
+        {"name": "Stephen Pink", "email": "steve@sics.se", "affiliation": "Luleå University of Technology"}
+    ],
+    "submission": {"content": "%PDF-whatever2"},
+    "submitted": true,
+    "options": {"calories": 200}
+},
+{
+    "_id_": 3,
+    "title": "A Simulation Study of IP Switching",
+    "abstract": "Recently there has been much interest in combining the speed of layer-2 switching with the features of layer-3 routing. This has been prompted by numerous proposals, including: IP Switching [1], Tag Switching [2], ARIS [3], CSR [4], and IP over ATM [5]. In this paper, we study IP Switching and evaluate the performance claims made by Newman et al in [1] and [6]. In particular, using ten network traces, we study how well IP Switching performs with traffic found in campus, corporate, and Internet Service Provider (ISP) environments. Our main finding is that IP Switching will lead to a high proportion of datagrams that are switched; over 75% in all of the environments we studied. We also investigate the effects that different flow classifiers and various timer values have on performance, and note that some choices can result in a large VC space requirement. Finally, we present recommendations for the flow classifier and timer values, as a function of the VC space of the switch and the network environment being served.",
+    "authors": [
+        {"name":"Steven Lin", "email": "sclin@leland.stanford.edu", "affiliation": "Stanford University", "contact": true},
+        {"name":"Nick McKeown", "email": "nickm@ee.stanford.edu", "affiliation": "Stanford University"}
+    ],
+    "pc_conflicts": ["mgbaker@cs.stanford.edu"],
+    "submission": {"content": "%PDF-whatever3"},
+    "submitted": true,
+    "options": {"calories": 1040}
+},
+{
+    "_id_": 4,
+    "title": "Scalable High Speed IP Routing Lookups",
+    "abstract": "Internet address lookup is a challenging problem because of increasing routing table sizes, increased traffic, higher speed links, and the migration to 128 bit IPv6 addresses. IP routing lookup requires computing the best matching prefix, for which standard solutions like hashing were believed to be inapplicable. The best existing solution we know of, BSD radix tries, scales badly as IP moves to 128 bit addresses. Our paper describes a new algorithm for best matching prefix using binary search on hash tables organized by prefix lengths. Our scheme scales very well as address and routing table sizes increase: independent of the table size, it requires a worst case time of log2(address bits) hash lookups. Thus only 5 hash lookups are needed for IPv4 and 7 for IPv6. We also introduce Mutating Binary Search and other optimizations that, for a typical IPv4 backbone router with over 33,000 entries, considerably reduce the average number of hashes to less than 2, of which one hash can be simplified to an indexed array access. We expect similar average case behavior for IPv6.",
+    "authors": [
+        {"name":"Marcel Waldvogel", "email": "waldvogel@tik.ee.ethz.ch", "affiliation": "Computer Engineering and Networks Laboratory, ETH Zürich", "contact": true},
+        {"name":"George Varghese", "email": "varghese@ccrc.wustl.edu", "affiliation": "Computer and Communications Research Center, Washington University in St. Louis", "contact": true},
+        {"name":"Jonathan S. Turner", "email": "jst@ccrc.wustl.edu", "affiliation": "Computer and Communications Research Center, Washington University in St. Louis"},
+        {"name":"Bernhard Plattner", "email": "plattner@tik.ee.ethz.ch", "affiliation": "Computer Engineering and Networks Laboratory, ETH Zürich"}
+    ],
+    "submission": {"content": "%PDF-whatever4"},
+    "submitted": true,
+    "options": {"calories": 1040}
+},
+{
+    "_id_": 5,
+    "title": "Solutions to Hidden Terminal Problems in Wireless Networks",
+    "abstract": "The floor acquisition multiple access (FAMA) discipline is analyzed in networks with hidden terminals. According to FAMA, control of the channel (the floor) is assigned to at most one station in the network at any given time, and this station is guaranteed to be able to transmit one or more data packets to different destinations with no collisions. The FAMA protocols described consist of non-persistent carrier or packet sensing, plus a collision-avoidance dialogue between a source and the intended receiver of a packet. Sufficient conditions under which these protocols provide correct floor acquisition are presented and verified for networks with hidden terminals; it is shown that FAMA protocols must use carrier sensing to support correct floor acquisition. The throughput of FAMA protocols is analyzed for single-channel networks with hidden terminals; it is shown that carrier-sensing FAMA protocols perform better than ALOHA and CSMA protocols in the presence of hidden terminals.",
+    "authors": [
+        {"name":"Chane L. Fullmer", "email": "chane@ecse.ucsc.edu", "affiliation": "Computer Engineering Department, University of California, Santa Cruz", "contact": true},
+        {"name":"J. J. Garcia-Luna-Aceves", "email": "jj@cse.ucsc.edu", "affiliation": "Computer Engineering Department, University of California, Santa Cruz"}
+    ],
+    "submission": {"content": "%PDF-whatever5"},
+    "submitted": true,
+    "options": {"calories": 0}
+},
+{
+    "_id_": 6,
+    "title": "Trace-Based Mobile Network Emulation",
+    "abstract": "Subjecting a mobile computing system to wireless network conditions that are realistic yet reproducible is a challenging problem. In this paper, we describe a technique called trace modulation that re-creates the observed end-to-end characteristics of a real wireless network in a controlled and repeatable manner. Trace modulation is transparent to applications and accounts for all network traffic sent or received by the system under test. We present results that show that it is indeed capable of reproducing wireless network performance faithfully.",
+    "authors": [
+        {"name":"Brian Noble", "email": "bnoble@cs.cmu.edu", "affiliation": "Carnegie Mellon University, School of Computer Science", "contact": true},
+        {"name":"M. Satyanarayanan", "email": "satya@cs.cmu.edu", "affiliation": "Carnegie Mellon University, School of Computer Science"},
+        {"name":"Giao Thanh Nguyen", "email": "gnguyen@cs.berkeley.edu", "affiliation": "University of California, Berkeley"},
+        {"name":"Randy H. Katz", "email": "randy@cs.berkeley.edu", "affiliation": "University of California, Berkeley"}
+    ],
+    "submission": {"content": "%PDF-whatever6"},
+    "submitted": true
+},
+{
+    "_id_": 7,
+    "title": "Fair Scheduling in Wireless Packet Networks",
+    "abstract": "Fair scheduling of delay and rate-sensitive packet flows over a wireless channel is not addressed effectively by most contemporary wireline fair scheduling algorithms because of two unique characteristics of wireless media: (a) bursty channel errors, and (b) location-dependent channel capacity and errors. Besides, in packet cellular networks, the base station typically performs the task of packet scheduling for both downlink and uplink flows in a cell; however a base station has only a limited knowledge of the arrival processes of uplink flows.\n\nIn this paper, we propose a new model for wireless fair scheduling based on an adaptation of fluid fair queueing to handle location-dependent error bursts. We describe an ideal wireless fair scheduling algorithm which provides a packetized implementation of the fluid model while assuming full knowledge of the current channel conditions. For this algorithm, we derive the worst-case throughput and delay bounds. Finally, we describe a practical wireless scheduling algorithm which approximates the ideal algorithm. Through simulations, we show that the algorithm achieves the desirable properties identified in the wireless fluid fair queueing model.",
+    "authors": [
+        {"name":"Songwu Lu", "email": "slu@crhc.uiuc.edu", "affiliation": "UIUC", "contact": true},
+        {"name":"Vaduvur Bharghavan", "email": "bharghav@crhc.uiuc.edu", "affiliation": "UIUC"},
+        {"name":"Rayadurgam Srikant", "email": "rsrikant@uiuc.edu", "affiliation": "UIUC"}
+    ],
+    "submission": {"content": "%PDF-whatever7"},
+    "submitted": true
+},
+{
+    "_id_": 8,
+    "title": "Fast Restoration of Real-Time Communication Service from Component Failures in Multi-Hop Networks",
+    "abstract": "For many applications it is important to provide communication services with guaranteed timeliness and fault-tolerance at an acceptable level of overhead. In this paper, we present a scheme for restoring real-time channels, each with guaranteed timeliness, from component failures in multi-hop networks. To ensure fast/guaranteed recovery, backup channels are set up a priori in addition to each primary channel. That is, a dependable real-time connection consists of a primary channel and one or more backup channels. If a primary channel fails, one of its backup channels is activated to become a new primary channel. We describe a protocol which provides an integrated solution to the failure-recovery problem (i.e., channel switching, resource re-allocation, ...). We also present a resource sharing method that significantly reduces the overhead of backup channels. The simulation results show that good coverage (in recovering from failures) can be achieved with about 30% degradation in network utilization under a reasonable failure condition. Moreover, the fault-tolerance level of each dependable connection can be controlled, independently of other connections, to reflect its criticality.",
+    "authors": [
+        {"name":"Seungjae Han", "email": "sjhan@eecs.umich.edu", "affiliation": "University of Michigan", "contact": true},
+        {"name":"Kang G. Shin", "email": "kgshin@eecs.umich.edu", "affiliation": "University of Michigan"}
+    ],
+    "submission": {"content": "%PDF-whatever8"},
+    "submitted": true
+},
+{
+    "_id_": 9,
+    "title": "Skyscraper Broadcasting: A New Broadcasting Scheme for Metropolitan Video-on-Demand Systems",
+    "abstract": "We investigate a novel multicast technique, called Skyscraper Broadcasting (SB), for video-on-demand applications. We discuss the data fragmentation technique, the broadcasting strategy, and the client design. We also show the correctness of our technique, and derive mathematical equations to analyze its storage requirement. To assess its performance, we compare it to the latest designs known as Pyramid Broadcasting (PB) and Permutation-Based Pyramid Broadcasting (PPB). Our study indicates that PB offers excellent access latency. However, it requires very large storage space and disk bandwidth at the receiving end. PPB is able to address these problems. However, this is accomplished at the expense of a larger access latency and more complex synchronization. With SB, we are able to achieve the low latency of PB while using only 20% of the buffer space required by PPB.",
+    "authors": [
+        {"name":"Kien A. Hua", "email": "kienhua@cs.ucf.edu", "affiliation": "Department of Computer Science, University of Central Florida", "contact": true},
+        {"name":"Simon Sheu", "email": "sheu@cs.ucf.edu", "affiliation": "Department of Computer Science, University of Central Florida"}
+    ],
+    "submission": {"content": "%PDF-whatever9"},
+    "submitted": true
+},
+{
+    "_id_": 10,
+    "title": "Active Bridging",
+    "abstract": "Active networks accelerate network evolution by permitting the network infrastructure to be programmable, on a per-user, per-packet, or other basis. This programmability must be balanced against the safety and security needs inherent in shared resources.This paper describes the design, implementation, and performance of a new type of network element, an Active Bridge. The active bridge can be reprogrammed \"on the fly\", with loadable modules called switchlets. To demonstrate the use of the active property, we incrementally extend what is initially a programmable buffered repeater with switchlets into a self-learning bridge, and then a bridge supporting spanning tree algorithms. To demonstrate the agility that active networking gives, we show how it is possible to upgrade a network from an \"old\" protocol to a \"new\" protocol on-the-fly. Moreover, we are able to take advantage of information unavailable to the implementors of either protocol to validate the new protocol and fall back to the old protocol if an error is detected. This shows that the Active Bridge can protect itself from some algorithmic failures in loadable modules.Our approach to safety and security favors static checking and prevention over dynamic checks when possible. We rely on strong type checking in the Caml language for the loadable module infrastructure, and achieve respectable performance. The prototype implementation on a Pentium-based HP Netserver LS running Linux with 100 Mbps Ethernet LANS achieves ttcp throughput of 16 Mbps between two PCs running Linux, compared with 76 Mbps unbridged. Measured frame rates are in the neighborhood of 1800 frames per second.",
+    "authors": [
+        {"name":"D. Scott Alexander", "email": "salex@dsl.cis.upenn.edu", "affiliation": "University of Pennsylvania", "contact": true},
+        {"name":"Marianne Shaw", "email": "marianne@dsl.cis.upenn.edu", "affiliation": "University of Pennsylvania"},
+        {"name":"Scott Nettles", "email": "nettles@dsl.cis.upenn.edu", "affiliation": "University of Pennsylvania"},
+        {"name":"Jonathan M. Smith", "email": "jms@dsl.cis.upenn.edu", "affiliation": "University of Pennsylvania"}
+    ],
+    "submission": {"content": "%PDF-whatever10"},
+    "submitted": true
+},
+{
+    "_id_": 11,
+    "title": "Internet Routing Instability",
+    "abstract": "This paper examines the network inter-domain routing information exchanged between backbone service providers at the major U.S. public Internet exchange points. Internet routing instability, or the rapid fluctuation of network reachability information, is an important problem currently facing the Internet engineering community. High levels of network instability can lead to packet loss, increased network latency and time to convergence. At the extreme, high levels of routing instability have lead to the loss of internal connectivity in wide-area, national networks. In this paper, we describe several unexpected trends in routing instability, and examine a number of anomalies and pathologies observed in the exchange of inter-domain routing information. The analysis in this paper is based on data collected from BGP routing messages generated by border routers at five of the Internet core's public exchange points during a nine month period. We show that the volume of these routing updates is several orders of magnitude more than expected and that the majority of this routing information is redundant, or pathological. Furthermore, our analysis reveals several unexpected trends and ill-behaved systematic properties in Internet routing. We finally posit a number of explanations for these anomalies and evaluate their potential impact on the Internet infrastructure.",
+    "authors": [
+        {"name":"Craig Labovitz", "email": "labovit@eecs.umich.edu", "affiliation": "University of Michigan Department of Electrical Engineering and Computer Science", "contact": true},
+        {"name":"G. Robert Malan", "email": "rmalan@eecs.umich.edu", "affiliation": "University of Michigan Department of Electrical Engineering and Computer Science", "contact": true},
+        {"name":"Farnam Jahanian", "email": "farnam@eecs.umich.edu", "affiliation": "University of Michigan Department of Electrical Engineering and Computer Science", "contact": true}
+    ],
+    "submission": {"content": "%PDF-whatever11"},
+    "submitted": true
+},
+{
+    "_id_": 12,
+    "title": "Dynamics of Random Early Detection",
+    "abstract": "In this paper we evaluate the effectiveness of Random Early Detection (RED) over traffic types categorized as non-adaptive, fragile and robust, according to their responses to congestion. We point out that RED allows unfair bandwidth sharing when a mixture of the three traffic types shares a link. This unfairness is caused by the fact that at any given time RED imposes the same loss rate on all flows, regardless of their bandwidths.\n\nWe propose Fair Random Early Drop (FRED), a modified version of RED. FRED uses per-active-flow accounting to impose on each flow a loss rate that depends on the flow's buffer use.\n\nWe show that FRED provides better protection than RED for adaptive (fragile and robust) flows. In addition, FRED is able to isolate non-adaptive greedy traffic more effectively. Finally, we present a \"two-packet-buffer\" gateway mechanism to support a large number of flows without incurring additional queueing delays inside the network. These improvements are demonstrated by simulations of TCP and UDP traffic.\n\nFRED does not make any assumptions about queueing architecture; it will work with a FIFO gateway. FRED's per-active-flow accounting uses memory in proportion to the total number of buffers used: a FRED gateway maintains state only for flows for which it has packets buffered, not for all flows that traverse the gateway.",
+    "authors": [
+        {"name":"Dong Lin", "affiliation": "Harvard University"},
+        {"name":"Robert Morris", "email": "rtm@eecs.harvard.edu", "affiliation": "Harvard University", "contact": true}
+    ],
+    "submission": {"content": "%PDF-whatever12"},
+    "pc_conflicts": ["shenker@parc.xerox.com"],
+    "submitted": true
+},
+{
+    "_id_": 13,
+    "title": "End-to-end Internet Packet Dynamics",
+    "abstract": "We discuss findings from a large-scale study of Internet packet dynamics conducted by tracing 20,000 TCP bulk transfers between 35 Internet sites. Because we traced each 100 Kbyte transfer at both the sender and the receiver, the measurements allow us to distinguish between the end-to-end behaviors due to the different directions of the Internet paths, which often exhibit asymmetries. We characterize the prevalence of unusual network events such as out-of-order delivery and packet corruption; discuss a robust receiver-based algorithm for estimating \"bottleneck bandwidth\" that addresses deficiencies discovered in techniques based on \"packet pair\"; investigate patterns of packet loss, finding that loss events are not well-modeled as independent and, furthermore, that the distribution of the duration of loss events exhibits infinite variance; and analyze variations in packet transit delays as indicators of congestion periods, finding that congestion periods also span a wide range of time scales.",
+    "authors": [
+        {"name":"Vern Paxson", "email": "vern@ee.lbl.gov", "affiliation": "Network Research Group, Lawrence Berkeley National Laboratory, University of California, Berkeley", "contact": true}
+    ],
+    "submission": {"content": "%PDF-whatever13"},
+    "submitted": true
+},
+{
+    "_id_": 14,
+    "title": "Network Performance Effects of HTTP/1.1, CSS1, and PNG",
+    "abstract": "We describe our investigation of the effect of persistent connections, pipelining and link level document compression on our client and server HTTP implementations. A simple test setup is used to verify HTTP/1.1's design and understand HTTP/1.1 implementation strategies. We present TCP and real time performance data between the libwww robot [27] and both the W3C's Jigsaw [28] and Apache [29] HTTP servers using HTTP/1.0, HTTP/1.1 with persistent connections, HTTP/1.1 with pipelined requests, and HTTP/1.1 with pipelined requests and deflate data compression [22]. We also investigate whether the TCP Nagle algorithm has an effect on HTTP/1.1 performance. While somewhat artificial and possibly overstating the benefits of HTTP/1.1, we believe the tests and results approximate some common behavior seen in browsers. The results confirm that HTTP/1.1 is meeting its major design goals. Our experience has been that implementation details are very important to achieve all of the benefits of HTTP/1.1.\n\nFor all our tests, a pipelined HTTP/1.1 implementation outperformed HTTP/1.0, even when the HTTP/1.0 implementation used multiple connections in parallel, under all network environments tested. The savings were at least a factor of two, and sometimes as much as a factor of ten, in terms of packets transmitted. Elapsed time improvement is less dramatic, and strongly depends on your network connection.Some data is presented showing further savings possible by changes in Web content, specifically by the use of CSS style sheets [10], and the more compact PNG [20] image representation, both recent recommendations of W3C. Time did not allow full end to end data collection on these cases. The results show that HTTP/1.1 and changes in Web content will have dramatic results in Internet and Web performance as HTTP/1.1 and related technologies deploy over the near future. Universal use of style sheets, even without deployment of HTTP/1.1, would cause a very significant reduction in network traffic.This paper does not investigate further performance and network savings enabled by the improved caching facilities provided by the HTTP/1.1 protocol, or by sophisticated use of range requests.",
+    "authors": [
+        {"name":"Henrik Frystyk Nielsen", "email": "frystyk@w3.org", "affiliation": "World Wide Web Consortium", "contact": true},
+        {"name":"James Gettys", "email": "jg@pa.dec.com", "affiliation": "Visiting Scientist, World Wide Web Consortium; Digital Equipment Corporation"},
+        {"name":"Anselm Baird-Smith", "email": "abaird@w3.org", "affiliation": "World Wide Web Consortium"},
+        {"name":"Eric Prud'hommeaux", "email": "eric@w3.org", "affiliation": "World Wide Web Consortium"},
+        {"name":"Håkon Wium Lie", "email": "howcome@w3.org", "affiliation": "World Wide Web Consortium"},
+        {"name":"Chris Lilley", "email": "chris@w3.org", "affiliation": "World Wide Web Consortium"}
+    ],
+    "submission": {"content": "%PDF-whatever14"},
+    "submitted": true
+},
+{
+    "_id_": 15,
+    "title": "Automated Packet Trace Analysis of TCP Implementations",
+    "abstract": "We describe tcpanaly, a tool for automatically analyzing a TCP implementation's behavior by inspecting packet traces of the TCP's activity. Doing so requires surmounting a number of hurdles, including detecting packet filter measurement errors, coping with ambiguities due to the distance between the measurement point and the TCP, and accommodating a surprisingly large range of behavior among different TCP implementations. We discuss why our efforts to develop a fully general tool failed, and detail a number of significant differences among 8 major TCP implementations, some of which, if ubiquitous, would devastate Internet performance. The most problematic TCPs were all independently written, suggesting that correct TCP implementation is fraught with difficulty. Consequently, it behooves the Internet community to develop testing programs and reference implementations.",
+    "authors": [
+        {"name":"Vern Paxson", "email": "vern@ee.lbl.gov", "affiliation": "Network Research Group, Lawrence Berkeley National Laboratory, University of California, Berkeley", "contact": true}
+    ],
+    "submission": {"content": "%PDF-whatever15"},
+    "submitted": true
+},
+{
+    "_id_": 16,
+    "title": "Potential Benefits of Delta Encoding and Data Compression for HTTP",
+    "abstract": "Caching in the World Wide Web currently follows a naive model, which assumes that resources are referenced many times between changes. The model also provides no way to update a cache entry if a resource does change, except by transferring the resource's entire new value. Several previous papers have proposed updating cache entries by transferring only the differences, or \"delta,\" between the cached entry and the current value.\n\nIn this paper, we make use of dynamic traces of the full contents of HTTP messages to quantify the potential benefits of delta-encoded responses. We show that delta encoding can provide remarkable improvements in response size and response delay for an important subset of HTTP content types. We also show the added benefit of data compression, and that the combination of delta encoding and data compression yields the best results.\n\nWe propose specific extensions to the HTTP protocol for delta encoding and data compression. These extensions are compatible with existing implementations and specifications, yet allow efficient use of a variety of encoding techniques.",
+    "authors": [
+        {"name":"Jeffrey C. Mogul", "email": "mogul@wrl.dec.com", "affiliation": "Digital Equipment Corporation Western Research Laboratory", "contact": true},
+        {"name":"Fred Douglis", "email": "douglis@research.att.com", "affiliation": "AT&T Labs - Research"},
+        {"name":"Anja Feldmann", "email": "anja@research.att.com", "affiliation": "AT&T Labs - Research"},
+        {"name":"Balachander Krishnamurthy", "email": "bala@research.att.com", "affiliation": "AT&T Labs - Research", "contact": true}
+    ],
+    "submission": {"content": "%PDF-whatever16"},
+    "submitted": true
+},
+{
+    "_id_": 17,
+    "title": "Network Text Editor (NTE): A Scalable Shared Text Editor for the MBone",
+    "abstract": "IP Multicast, Lightweight Sessions and Application Level Framing provide guidelines by which multimedia conferencing tools can be designed, but they do not provide specific solutions. In this paper, we use these design principles to guide the design of a multicast based shared editor, and examine the consequences of taking a loose consistency approach to achieve good performance in the face of network failures and losses.",
+    "authors": [
+        {"name":"Mark Handley", "email": "mjh@isi.edu", "affiliation": "USC Information Sciences Institute", "contact": true},
+        {"name":"Jon Crowcroft", "email": "jon@cs.ucl.ac.uk", "affiliation": "University College London", "contact": true}
+    ],
+    "submission": {"content": "%PDF-whatever17"},
+    "submitted": true
+},
+{
+    "_id_": 18,
+    "title": "Consistent Overhead Byte Stuffing",
+    "abstract": "Byte stuffing is a process that transforms a sequence of data bytes that may contain 'illegal' or 'reserved' values into a potentially longer sequence that contains no occurrences of those values. The extra length is referred to in this paper as the overhead of the algorithm.\n\nTo date, byte stuffing algorithms, such as those used by SLIP [RFC1055], PPP [RFC1662] and AX.25 [ARRL84], have been designed to incur low average overhead but have made little effort to minimize worst case overhead.\n\nSome increasingly popular network devices, however, care more about the worst case. For example, the transmission time for ISM-band packet radio transmitters is strictly limited by FCC regulation. To adhere to this regulation, the practice is to set the maximum packet size artificially low so that no packet, even after worst case overhead, can exceed the transmission time limit.\n\nThis paper presents a new byte stuffing algorithm, called Consistent Overhead Byte Stuffing (COBS), that tightly bounds the worst case overhead. It guarantees in the worst case to add no more than one byte in 254 to any packet. Furthermore, the algorithm is computationally cheap, and its average overhead is very competitive with that of existing algorithms.",
+    "authors": [
+        {"name":"Stuart Cheshire", "email": "cheshire@cs.stanford.edu", "affiliation": "Computer Science Department, Stanford University", "contact": true},
+        {"name":"Mary Baker", "email": "mgbaker@cs.stanford.edu", "affiliation": "Computer Science Department, Stanford University"}
+    ],
+    "submission": {"content": "%PDF-whatever18"},
+    "submitted": true
+},
+{
+    "_id_": 19,
+    "title": "A Flow-Based Approach to Datagram Security",
+    "abstract": "Datagram services provide a simple, flexible, robust, and scalable communication abstraction; their usefulness has been well demonstrated by the success of IP, UDP, and RPC. Yet, the overwhelming majority of network security protocols that have been proposed are geared towards connection-oriented communications. The few that do cater to datagram communications tend to either rely on long term host-pair keying or impose a session-oriented (i.e., requiring connection setup) semantics.\n\nSeparately, the concept of flows has received a great deal of attention recently, especially in the context of routing and QoS. A flow characterizes a sequence of datagrams sharing some pre-defined attributes. In this paper, we advocate the use of flows as a basis for structuring secure datagram communications. We support this by proposing a novel protocol for datagram security based on flows. Our protocol achieves zero-message keying, thus preserving the connectionless nature of datagram, and makes use of soft state, thus providing the efficiency of session-oriented schemes. We have implemented an instantiation for IP in the 4.4BSD kernel, and we provide a description of our implementation along with performance results.",
+    "authors": [
+        {"name": "Suvo Mittra", "email": "suvo@cs.stanford.edu", "affiliation": "Stanford University", "contact": true},
+        {"name": "Thomas Y.C. Woo", "email": "woo@research.bell-labs.com", "affiliation": "Bell Laboratories"}
+    ],
+    "submission": {"content": "%PDF-whatever19"},
+    "submitted": true
+},
+{
+    "_id_": 20,
+    "title": "Best-Effort versus Reservations: A Simple Comparative Analysis",
+    "abstract": "Using a simple analytical model, this paper addresses the following question: Should the Internet retain its best-effort-only architecture, or should it adopt one that is reservation-capable? We characterize the differences between reservation-capable and best-effort-only networks in terms of application performance and total welfare. Our analysis does not yield a definitive answer to the question we pose, since it would necessarily depend on unknowable factors such as the future cost of network bandwidth and the nature of the future traffic load. However, our model does reveal some interesting phenomena. First, in some circumstances, the amount of incremental bandwidth needed to make a best-effort-only network perform as well as a reservation capable one diverges as capacity increases. Second, in some circumstances reservation-capable networks retain significant advantages over best-effort-only networks, no matter how cheap bandwidth becomes. Lastly, we find bounds on the maximum performance advantage a reservation-capable network can achieve over best effort architectures.",
+    "authors": [
+        {"name": "Lee Breslau", "email": "breslau@parc.xerox.com", "affiliation": "Xerox Palo Alto Research Center", "contact": true},
+        {"name": "Scott Shenker", "email": "shenker@parc.xerox.com", "affiliation": "Xerox Palo Alto Research Center"}
+    ],
+    "submission": {"content": "%PDF-whatever20"},
+    "submitted": true
+},
+{
+    "_id_": 21,
+    "title": "Quality of Service Based Routing: A Performance Perspective",
+    "abstract": "Recent studies provide evidence that Quality of Service (QoS) routing can provide increased network utilization compared to routing that is not sensitive to QoS requirements of traffic. However, there are still strong concerns about the increased cost of QoS routing, both in terms of more complex and frequent computations and increased routing protocol overhead. The main goals of this paper are to study these two cost components, and propose solutions that achieve good routing performance with reduced processing cost. First, we identify the parameters that determine the protocol traffic overhead, namely (a) policy for triggering updates, (b) sensitivity of this policy, and (c) clampdown timers that limit the rate of updates. Using simulation, we study the relative significance of these factors and investigate the relationship between routing performance and the amount of update traffic. In addition, we explore a range of design options to reduce the processing cost of QoS routing algorithms, and study their effect on routing performance. Based on the conclusions of these studies, we develop extensions to the basic QoS routing, that can achieve good routing performance with limited update generation rates. The paper also addresses the impact on the results of a number of secondary factors such as topology, high level admission control, and characteristics of network traffic.",
+    "authors": [
+        {"name": "George Apostolopoulos", "affiliation": "University of Maryland"},
+        {"name": "Roch Guérin", "affiliation": "IBM T. J. Watson Research Center"},
+        {"name": "Sanjay Kamat", "email": "sanjay@watson.ibm.com", "affiliation": "IBM T. J. Watson Research Center"},
+        {"name": "Satish K. Tripathi", "email": "tripathi@cs.ucr.edu", "affiliation": "UC Riverside", "contact": true}
+    ],
+    "submission": {"content": "%PDF-whatever21"},
+    "submitted": true
+},
+{
+    "_id_": 22,
+    "title": "Scalable QoS Provision Through Buffer Management",
+    "abstract": "In recent years, a number of link scheduling algorithms have been proposed that greatly improve upon traditional FIFO scheduling in being able to assure rate and delay bounds for individual sessions. However, they cannot be easily deployed in a backbone environ ment with thousands of sessions, as their complexity increases with the number of sessions. In this paper, we propose and analyze an approach that uses a simple buffer management scheme to provide rate guarantees to individual flows (or to a set of flows) multiplexed into a common FIFO queue. We establish the buffer allocation re quirements to achieve these rate guarantees and study the trade-off between the achievable link utilization and the buffer size required with the proposed scheme. The aspect of fair access to excess band width is also addressed, and its mapping onto a buffer allocation rule is investigated. Numerical examples are provided that illus trate the performance of the proposed schemes. Finally, a scalable architecture for QoS provisioning is presented that integrates the proposed buffer management scheme with WFQ scheduling that uses a small number of queues.",
+    "authors": [
+        {"name": "R. Guérin", "email": "guerin@watson.ibm.com", "affiliation": "IBM T. J. Watson Research Center", "contact": true},
+        {"name": "S. Kamat", "email": "sanjay@watson.ibm.com", "affiliation": "IBM T. J. Watson Research Center", "contact": true},
+        {"name": "V. Peris", "email": "vperis@watson.ibm.com", "affiliation": "IBM T. J. Watson Research Center"},
+        {"name": "R. Rajan", "email": "raju@watson.ibm.com", "affiliation": "IBM T. J. Watson Research Center"}
+    ],
+    "submission": {"content": "%PDF-whatever22"},
+    "submitted": true
+},
+{
+    "_id_": 23,
+    "title": "Data networks as cascades: Explaining the multifractal nature of Internet WAN traffic",
+    "abstract": "In apparent contrast to the well-documented self-similar (i.e., monofractal) scaling behavior of measured LAN traffic, recent studies have suggested that measured TCP/IP and ATM WAN traffic exhibits more complex scaling behavior, consistent with multifractals. To bring multifractals into the realm of networking, this paper provides a simple construction based on cascades (also known as multiplicative processes) that is motivated by the protocol hierarchy of IP data networks. The cascade framework allows for a plausible physical explanation of the observed multifractal scaling behavior of data traffic and suggests that the underlying multiplicative structure is a traffic invariant for WAN traffic that co-exists with self-similarity. In particular, cascades allow us to refine the previously observed self-similar nature of data traffic to account for local irregularities in WAN traffic that are typically associated with networking mechanisms operating on small time scales, such as TCP flow control.\n\nTo validate our approach, we show that recent measurements of Internet WAN traffic from both an ISP and a corporate environment are fully consistent with the proposed cascade paradigm and hence with multifractality. We rely on wavelet-based time-scale analysis techniques to visualize and to infer the scaling behavior of the traces, both globally and locally. We also discuss and illustrate with some examples how this cascade-based approach to describing data network traffic suggests novel ways for dealing with networking problems and helps in building intuition and physical understanding about the possible implications of multifractality on issues related to network performance analysis.",
+    "authors": [
+        {"name": "A. Feldmann", "email": "anja@research.att.com", "affiliation": "AT&T Labs—Research", "contact": true},
+        {"name": "A. C. Gilbert", "email": "agilbert@research.att.com", "affiliation": "AT&T Labs—Research"},
+        {"name": "W. Willinger", "email": "walter@research.att.com", "affiliation": "AT&T Labs—Research"}
+    ],
+    "submission": {"content": "%PDF-whatever23"},
+    "submitted": true
+},
+{
+    "_id_": 24,
+    "title": "A Digital Fountain Approach to Reliable Distribution of Bulk Data",
+    "abstract": "The proliferation of applications that must reliably distribute bulk data to a large number of autonomous clients motivates the design of new multicast and broadcast protocols. We de- scribe an ideal, fully scalable protocol for these applications that we call a digital fountain. A digital fountain allows any number of heterogeneous clients to acquire bulk data with optimal efficiency at times of their choosing. Moreover, no feedback channels are needed to ensure reliable delivery, even in the face of high loss rates.\n\nWe develop a protocol that closely approximates a digital fountain using a new class of erasure codes that for large block sizes are orders of magnitude faster than standard erasure codes. We provide performance measurements that demonstrate the feasibility of our approach and discuss the design, implementation and performance of an experimental system.",
+    "authors": [
+        {"name": "John W. Byers", "email": "byers@icsi.berkeley.edu", "affiliation": "UC Berkeley and International Computer Science Institute", "contact": true},
+        {"name": "Michael Luby", "email": "luby@icsi.berkeley.edu", "affiliation": "International Computer Science Institute", "contact": true},
+        {"name": "Michael Mitzenmacher", "email": "michaelm@pa.dec.com", "affiliation": "Digital Systems Research Center"},
+        {"name": "Ashutosh Rege", "email": "rege@icsi.berkeley.edu", "affiliation": "International Computer Science Institute"}
+    ],
+    "submission": {"content": "%PDF-whatever24"},
+    "submitted": true
+},
+{
+    "_id_": 25,
+    "title": "Secure Group Communications Using Key Graphs",
+    "abstract": "Many emerging applications (e.g., teleconference, real-time information services, pay per view, distributed interactive simulation, and collaborative work) are based upon a group communications model, i.e., they require packet delivery from one or more authorized senders to a very large number of authorized receivers. As a result, securing group communications (i.e., providing confidentiality, integrity, and authenticity of messages delivered between group members) will become a critical networking issue. In this paper, we present a novel solution to the scalability problem of group/multicast key management. We formalize the notion of a secure group as a triple (U; K; R) where U denotes a set of users, K a set of keys held by the users, and R a user-key relation. We then introduce key graphs to specify secure groups. For a special class of key graphs, we present three strategies for securely distributing rekey messages after a join/leave, and specify protocols for joining and leaving a secure group. The rekeying strategies and join/leave protocols are implemented in a prototype group key server we have built. We present measurement results from experiments and discuss performance comparisons. We show that our group key management service, using any of the three rekeying strategies, is scalable to large groups with frequent joins and leaves. In particular, the average measured processing time per join/leave increases linearly with the logarithm of group size.",
+    "authors": [
+        {"name": "Chung Kei Wong", "email": "ckwong@cs.utexas.edu", "affiliation": "Department of Computer Sciences, University of Texas at Austin", "contact": true},
+        {"name": "Mohamed Gouda", "email": "gouda@cs.utexas.edu", "affiliation": "Department of Computer Sciences, University of Texas at Austin"},
+        {"name": "Simon S. Lam", "email": "lam@cs.utexas.edu", "affiliation": "Department of Computer Sciences, University of Texas at Austin"}
+    ],
+    "submission": {"content": "%PDF-whatever25"},
+    "submitted": true
+},
+{
+    "_id_": 26,
+    "title": "Achieving bounded fairness for multicast and TCP traffic in the internet",
+    "abstract": "There is an urgent need for effective multicast congestion control algorithms which enable reasonably fair sharing of network resources between multicast and unicast TCP traffic under the current Internet infrastructure. In this paper, we propose a quantitative definition of a type of bounded fairness between multicast and unicast best-effort traffic, termed essentially fair. We also propose a window-based Random Listening Algorithm (RLA) for multicast congestion control. The algorithm is proven to be essentially fair to TCP connections under a restricted topology with equal round-trip times and with phase effects eliminated. The algorithm is also fair to multiple multicast sessions. This paper provides the theoretical proofs and some simulation results to demonstrate that the RLA achieves good performance under various network topologies. These include the performance of a generalization of the RLA algorithm for topologies with different round-trip times.",
+    "authors": [
+        {"name": "Huayan Amy Wang", "email": "whycu@ctr.columbia.edu", "affiliation": "Department of Electrical Engineering, Columbia University", "contact": true},
+        {"name": "Mischa Schwartz", "email": "schwartz@ctr.columbia.edu", "affiliation": "Department of Electrical Engineering, Columbia University"}
+    ],
+    "submission": {"content": "%PDF-whatever26"},
+    "submitted": true
+},
+{
+    "_id_": 27,
+    "title": "The MASC/BGMP Architecture for Inter-domain Multicast Routing",
+    "abstract": "Multicast routing enables efficient data distribution to multiple recipients. However, existing work has concentrated on extending single-domain techniques to wide-area networks, rather than providing mechanisms to realize inter-domain multicast on a global scale in the Internet.\n\nWe describe an architecture for inter-domain multicast routing that consists of two complementary protocols. The Multicast Address-Set Claim (MASC) protocol forms the basis for a hierarchical address allocation architecture. It dynamically allocates to domains multicast address ranges from which groups initiated in the domain get their multicast addresses. The Border-Gateway Multicast Protocol (BGMP), run by the border routers of a domain, constructs inter-domain bidirectional shared trees, while allowing any existing multicast routing protocol to be used within individual domains. The resulting shared tree for a group is rooted at the domain whose address range covers the group's address; this domain is typically the group initiator's domain. We demonstrate the feasibility and performance of these complementary protocols through simulation. This architecture, together with existing protocols operating within each domain, is intended as a framework in which to solve the problems facing the current multicast addressing and routing infrastructure.",
+    "authors": [
+        {"name": "Satish Kumar", "email": "kkumar@isi.edu", "affiliation": "Information Sciences Institute, University of Southern California", "contact": true},
+        {"name": "Pavlin Radoslavov", "email": "pavlin@isi.edu", "affiliation": "Information Sciences Institute, University of Southern California"},
+        {"name": "David Thaler", "email": "thalerd@eecs.umich.edu", "affiliation": "University of Michigan"},
+        {"name": "Cengiz Alaettinoğlu", "email": "cengiz@isi.edu", "affiliation": "Information Sciences Institute, University of Southern California"},
+        {"name": "Deborah Estrin", "email": "estrin@isi.edu", "affiliation": "Information Sciences Institute, University of Southern California"},
+        {"name": "Mark Handley", "email": "mjh@isi.edu", "affiliation": "Information Sciences Institute, University of Southern California"}
+    ],
+    "submission": {"content": "%PDF-whatever27"},
+    "submitted": true
+},
+{
+    "_id_": 28,
+    "title": "Session Directories and Internet Multicast Address Allocation",
+    "abstract": "A multicast session directory is a mechanism by which users can discover the existence of multicast sessions. In the Mbone, session announcements have also served as multicast address reservations - a dual purpose that is efficient, but which may cause some side-affects as session directories scale.\n\nIn this paper we examine the scaling of multicast address allocation when it is performed by such a multicast session directory. Despite our best efforts to make such an approach scale, this analysis ultimately reveals significant scaling problems, and suggests a new approach to multicast address allocation in the Internet environment.",
+    "authors": [
+        {"name": "Mark Handley", "email": "mjh@isi.edu", "affiliation": "USC Information Sciences Institute", "contact": true}
+    ],
+    "submission": {"content": "%PDF-whatever28"},
+    "submitted": true
+},
+{
+    "_id_": 29,
+    "title": "*Core*-Stateless Fair Queueing: Achieving Approximately Fair Bandwidth Allocations in High Speed Networks",
+    "abstract": "Router mechanisms designed to achieve fair bandwidth allocations, like Fair Queueing, have many desirable properties for congestion control in the Internet. However, such mechanisms usually need to maintain state, manage buffers, and/or perform packet scheduling on a per ow basis, and this complexity may prevent them from being cost-effectively implemented and widely deployed. In this paper, we propose an architecture that significantly reduces this implementation complexity yet still achieves approximately fair bandwidth allocations. We apply this approach to an island of routers { that is, a contiguous region of the network { and we distinguish between edge routers and core routers. Edge routers maintain per ow state; they estimate the incoming rate of each ow and insert a label into each packet header based on this estimate. Core routers maintain no per ow state; they use FIFO packet scheduling augmented by a probabilistic dropping algorithm that uses the packet labels and an estimate of the aggregate traffic at the router. We call the scheme Core-Stateless Fair Queueing. We present simulations and analysis on the performance of this approach, and discuss an alternate approach.",
+    "authors": [
+        {"name": "Ion Stoica", "email": "istoica@cs.cmu.edu", "affiliation": "CMU", "contact": true},
+        {"name": "Scott Shenker", "email": "shenker@parc.xerox.com", "affiliation": "Xerox PARC"},
+        {"name": "Hui Zhang", "email": "hzhang@cs.cmu.edu", "affiliation": "CMU"}
+    ],
+    "submission": {"content": "%PDF-whatever29"},
+    "submitted": true
+},
+{
+    "_id_": 30,
+    "title": "Uniform versus Priority Dropping for Layered Video",
+    "abstract": "In this paper, we analyze the relative merits of uniform versus priority dropping for the transmission of layered video. We first present our original intuitions about these two approaches, and then investigate the issue more thoroughly through simulations and analysis in which we explicitly model the performance of layered video applications. We compare both their performance characteristics and incentive properties, and find that the performance benefit of priority dropping is smaller than we expected, while uniform dropping has worse incentive properties than we previously believed.",
+    "authors": [
+        {"name": "Sandeep Bajaj", "email": "bajaj@parc.xerox.com", "affiliation": "Xerox Palo Alto Research Center"},
+        {"name": "Lee Breslau", "email": "breslau@parc.xerox.com", "affiliation": "Xerox Palo Alto Research Center"},
+        {"name": "Scott Shenker", "email": "shenker@parc.xerox.com", "affiliation": "Xerox Palo Alto Research Center", "contact": true}
+    ],
+    "submission": {"content": "%PDF-whatever30"},
+    "submitted": true
+}],
+"assignments_1": "paper,action,email,round\n13,primary,huitema@bellcore.com,R1\n13,primary,chair@_.com,R1\n13,primary,mgbaker@cs.stanford.edu,R2\n12,primary,pfrancis@ntt.jp,R1\n12,primary,christophe.diot@sophia.inria.fr,R1\n12,primary,peter.danzig@usc.edu,R3\n11,primary,jj@cse.ucsc.edu\n11,primary,lixia@cs.ucla.edu\n11,primary,marina@poema.ru\n14,primary,varghese@ccrc.wustl.edu\n14,primary,mjh@isi.edu\n14,primary,rguerin@ibm.com\n15,primary,floyd@ee.lbl.gov\n15,primary,shenker@parc.xerox.com\n15,primary,jon@cs.ucl.ac.uk\n18,primary,estrin@usc.edu\n18,primary,pdruschel@cs.rice.edu\n18,primary,christophe.diot@sophia.inria.fr\n17,primary,pdruschel@cs.rice.edu\n16,primary,jon@cs.ucl.ac.uk\n17,primary,lixia@cs.ucla.edu\n17,primary,mgbaker@cs.stanford.edu\n16,primary,floyd@ee.lbl.gov\n16,primary,chair@_.com\n10,primary,varghese@ccrc.wustl.edu\n10,primary,huitema@bellcore.com\n10,primary,jj@cse.ucsc.edu\n9,primary,marina@poema.ru\n9,primary,pfrancis@ntt.jp\n9,primary,peter.danzig@usc.edu\n4,primary,shenker@parc.xerox.com\n4,primary,mjh@isi.edu\n4,primary,estrin@usc.edu\n3,primary,rguerin@ibm.com\n3,primary,mjh@isi.edu\n3,primary,peter.danzig@usc.edu\n2,primary,pdruschel@cs.rice.edu\n2,primary,chair@_.com\n2,primary,jon@cs.ucl.ac.uk\n1,primary,mgbaker@cs.stanford.edu\n5,primary,floyd@ee.lbl.gov\n6,primary,jj@cse.ucsc.edu\n5,primary,christophe.diot@sophia.inria.fr\n5,primary,lixia@cs.ucla.edu\n6,primary,pfrancis@ntt.jp\n6,primary,shenker@parc.xerox.com\n8,primary,estrin@usc.edu\n8,primary,marina@poema.ru\n7,primary,varghese@ccrc.wustl.edu\n8,primary,huitema@bellcore.com\n7,primary,rguerin@ibm.com\n1,primary,varghese@ccrc.wustl.edu\n1,primary,mjh@isi.edu\n7,primary,lixia@cs.ucla.edu"
+}

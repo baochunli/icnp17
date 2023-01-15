@@ -1,0 +1,61 @@
+.app-block-footer li h6 a {
+    text-decoration: none;
+    color: #bbbbbb;
+}
+
+.app-block-footer li a {
+    color: rgba(116, 119, 123, .5);
+    text-decoration: none;
+}
+
+#menu-btn {
+    background-color: rgba(72,102, 150, 0.7);
+}
+
+#menu-btn:hover {
+    background-color: #336699;
+}
+
+.text-primary {
+  color: #336699;
+}
+
+a {
+  color: #336699;
+}
+
+a:hover {
+  color: #336699;
+}
+
+.nav-bordered.nav-stacked > li > a:hover {
+  color: #336699;
+}
+
+@media only screen and (min-width:769px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  .dropdown-submenu {
+    position: relative !important;
+  }
+  .dropdown-submenu>.dropdown-menu {
+    top: 0 !important;
+    left: 100% !important;
+    margin-top: -6px !important;
+    margin-left: -1px !important;
+    border-radius: 0 !important;
+  }
+  .dropdown-submenu:hover>.dropdown-menu {
+    display: block !important;
+  }
+  .dropdown-submenu>a:after {
+    display: block;
+    content: "\f105";
+    font-family: 'Roboto';
+    margin-top: -18px;
+    right: 15px;
+    position: absolute;
+    font-weight: 200;
+  }
+}

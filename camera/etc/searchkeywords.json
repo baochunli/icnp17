@@ -1,0 +1,219 @@
+[
+    {
+        "name": "ti",
+        "parser": "TextMatch_SearchTerm::parse",
+        "synonym": "title", "has": "any"
+    },
+    {
+        "name": "ab",
+        "parser": "TextMatch_SearchTerm::parse",
+        "synonym": "abstract", "has": "any"
+    },
+    {
+        "name": "au",
+        "parser": "ContactAuthor_SearchTerm::parse",
+        "synonym": "author"
+    },
+    {
+        "name": "co",
+        "parser": "TextMatch_SearchTerm::parse",
+        "synonym": ["collab", "collaborators"], "has": "any"
+    },
+    {
+        "name": "conf",
+        "parser": "Conflict_SearchTerm::parse",
+        "synonym": "conflict", "pc_only": false
+    },
+    {
+        "name": "pcconf",
+        "parser": "Conflict_SearchTerm::parse",
+        "synonym": "pcconflict", "pc_only": true
+    },
+    {
+        "name": "reconf",
+        "parser": "PaperSearch::parse_reconflict",
+        "synonym": "reconflict"
+    },
+    {
+        "name": "status",
+        "parser": "PaperStatus_SearchTerm::parse",
+        "synonym": "is"
+    },
+    {
+        "name": "paper",
+        "parser": "PaperPDF_SearchTerm::parse",
+        "final": false, "has": "any",
+        "synonym": ["sub", "submission"]
+    },
+    {
+        "name": "final",
+        "parser": "PaperPDF_SearchTerm::parse",
+        "final": true, "has": "any",
+        "synonym": ["finalversion", "final-version", "finalcopy", "final-copy"]
+    },
+    {
+        "name": "pagecount",
+        "parser": "Pages_SearchTerm::parse",
+        "synonym": "pages"
+    },
+    {
+        "name": "pref",
+        "parser": "Revpref_SearchTerm::parse",
+        "synonym": ["revpref", "repref", "prefexp", "revprefexp", "reprevexp",
+                    "prefexpertise", "revprefexpertise", "reprefexpertise"]
+    },
+    {
+        "name": "round",
+        "parser": "ReviewAdjustment_SearchTerm::parse_round"
+    },
+    {
+        "name": "rate",
+        "parser": "ReviewAdjustment_SearchTerm::parse_rate",
+        "synonym": ["rating"]
+    },
+    {
+        "name": "topic",
+        "parser": "Topic_SearchTerm::parse",
+        "has": "any"
+    },
+    {
+        "name": "lead",
+        "parser": "PaperPC_SearchTerm::parse", "pcfield": "lead",
+        "has": "any"
+    },
+    {
+        "name": "shepherd",
+        "parser": "PaperPC_SearchTerm::parse", "pcfield": "shepherd",
+        "synonym": ["shep"], "has": "any"
+    },
+    {
+        "name": "admin",
+        "parser": "PaperPC_SearchTerm::parse", "pcfield": "manager",
+        "synonym": ["manager", "administrator"], "has": "any"
+    },
+    {
+        "name": "dec",
+        "parser": "Decision_SearchTerm::parse",
+        "synonym": "decision", "has": "any"
+    },
+    {
+        "name": "tag",
+        "parser": "Tag_SearchTerm::parse",
+        "negated": false, "sorting": false, "has": "any"
+    },
+    {
+        "name": "notag",
+        "parser": "Tag_SearchTerm::parse",
+        "negated": true, "sorting": false, "has": "any"
+    },
+    {
+        "name": "order",
+        "parser": "Tag_SearchTerm::parse",
+        "negated": false, "sorting": true, "revsort": false
+    },
+    {
+        "name": "rorder",
+        "parser": "Tag_SearchTerm::parse",
+        "negated": false, "sorting": true, "revsort": true, "synonym": "revorder"
+    },
+    {
+        "name": "color",
+        "parser": "Color_SearchTerm::parse",
+        "has": "color"
+    },
+    {
+        "name": "style",
+        "parser": "Color_SearchTerm::parse",
+        "has": "any"
+    },
+    {
+        "name": "badge",
+        "parser": "Color_SearchTerm::parse_badge",
+        "has": "any"
+    },
+    {
+        "name": "emoji",
+        "parser": "Color_SearchTerm::parse_emoji",
+        "has": "any"
+    },
+    {
+        "name": "formula",
+        "parser": "Formula_SearchTerm::parse", "allow_parens": true,
+        "synonym": "f"
+    },
+    {
+        "name": "graph",
+        "parser": "Formula_SearchTerm::parse_graph", "allow_parens": true,
+        "synonym": "g"
+    },
+    {
+        "name": "r",
+        "parser": "Review_SearchTerm::parse",
+        "retype": null, "recompleteness": null, "has": ">0"
+    },
+    {
+        "name": "approvable",
+        "parser": "Review_SearchTerm::parse",
+        "retype": null, "recompleteness": "approvable", "has": ">0"
+    },
+    {
+        "match": "(|c|i|p|complete-?|incomplete-?|partial-?|in-?progress-?)(|pri-?|sec-?|ext-?|primary-?|secondary-?|external-?)(?:re|rev|review)",
+        "factory": "Review_SearchTerm::keyword_factory"
+    },
+    {
+        "match": "(|c|i|p|complete-?|incomplete-?|partial-?|in-?progress-?)(pri|sec|ext|primary|secondary|external)",
+        "factory": "Review_SearchTerm::keyword_factory"
+    },
+    {
+        "match": "(|au-?|author-?|any-?)(?:cmt|comment)",
+        "factory": "Comment_SearchTerm::comment_factory"
+    },
+    {
+        "match": "(|draft-?)(\\w*)resp(?:onse)(|-?draft)",
+        "factory": "Comment_SearchTerm::response_factory"
+    },
+    {
+        "name": "show",
+        "parser": "Show_SearchTerm::parse", "allow_parens": true,
+        "showtype": true, "sorting": false
+    },
+    {
+        "name": "hide",
+        "parser": "Show_SearchTerm::parse", "allow_parens": true,
+        "showtype": false, "sorting": false
+    },
+    {
+        "name": "edit",
+        "parser": "Show_SearchTerm::parse",
+        "showtype": "edit", "sorting": false
+    },
+    {
+        "name": "showsort",
+        "parser": "Show_SearchTerm::parse", "allow_parens": true,
+        "showtype": true, "sorting": true, "synonym": "sortshow"
+    },
+    {
+        "name": "editsort",
+        "parser": "Show_SearchTerm::parse",
+        "showtype": "edit", "sorting": true, "synonym": "sortedit"
+    },
+    {
+        "name": "sort",
+        "parser": "Show_SearchTerm::parse", "allow_parens": true,
+        "showtype": null, "sorting": true
+    },
+    {
+        "name": "HEADING",
+        "parser": "Show_SearchTerm::parse_heading",
+        "synonym": "heading"
+    },
+    {
+        "name": "ss",
+        "parser": "PaperSearch::parse_saved_search",
+        "synonym": "search"
+    },
+    {
+        "name": "has",
+        "parser": "PaperSearch::parse_has"
+    }
+]

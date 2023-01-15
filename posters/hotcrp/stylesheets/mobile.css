@@ -1,0 +1,85 @@
+/* -*- mode: css; indent-tabs-mode: t; css-indent-offset: 8 -*- */
+/* mobile.css -- HotCRP mobile CSS styles */
+/* HotCRP is Copyright (c) 2006-2017 Eddie Kohler and others */
+/* Distributed under an MIT-like license; see LICENSE */
+
+#header_site, #header_page, h1.paptitle, div.submission_modes {
+	padding-left: 12px;
+}
+#header_right, h1.paptitle, div#footer {
+	padding-right: 12px;
+}
+table.vbar {
+	margin-right: 12px;
+}
+div#body {
+	margin: 0 12px;
+}
+div#initialmsgs {
+	padding: 0 12px;
+}
+div.paptitle {
+	margin-left: 0;
+}
+h2.paptitle {
+	text-indent: -1.5em;
+	margin-left: 1.5em;
+}
+.pspcard_container, .leftmenu_menucontainer {
+	float: none;
+	position: static;
+	width: auto;
+	margin-left: 0;
+	margin-bottom: 16px;
+}
+.pspcard_fold {
+	padding: 7px 0;
+	display: block;
+}
+.pspcard_open {
+	display: none;
+}
+.paptab {
+	float: none;
+	width: 100%;
+}
+.paptab_abstract {
+	padding-right: 0;
+}
+.paptab + .paptab {
+	padding-top: 1em;
+}
+.papcard, .pedcard, .notecard, .revcard, .cmtcard {
+	margin-left: 0;
+}
+.leftmenu_content_container {
+	margin: 0 -12px;
+}
+.leftmenu_content {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+.leftmenu_body .xmsg {
+	margin-left: -12px;
+	margin-right: -12px;
+}
+.leftmenu_body .xmsgc {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+.helplist_item {
+	margin-left: -12px;
+	margin-right: -12px;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+input, textarea {
+	max-width: 100%;
+}
+table.pltable {
+	font-size: smaller;
+}
+.reviewersdiv {
+	font-size: smaller;
+	overflow-x: scroll;
+}
